@@ -8,12 +8,17 @@ export default function Index() {
         <h1>Rutherford16</h1>
       </section>
       <div className='flex flex-col w-full'>
-        <section id='navbar' className='border w-full p-3'>
+        <section id='navbar' className='w-full flex flex-row ml-1'>
+          <div className='-skew-x-12 w-fit bg-primary'>
+            <a href='#' className='p-2 block skew-x-12 text-background'>Index</a>
+          </div>
           <div className='border -skew-x-12 w-fit'>
-            <a href='#' className='p-3 block skew-x-12'>Index</a>
+            <a href='#' className='p-2 block skew-x-12'>Animasi</a>
+          </div>
+          <div className='border -skew-x-12 w-full'>
           </div>
         </section>
-        <section id='body' className='border-t-0 border h-full p-3'>
+        <section id='body' className='border h-full p-3'>
           <p>Welcome, lorem</p>
         </section>
       </div>
