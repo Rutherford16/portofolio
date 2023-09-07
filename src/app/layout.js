@@ -1,23 +1,23 @@
-'use client'
-
 import './globals.css';
+import Head from 'next/head';
 import { Inter } from 'next/font/google';
 import Image from 'next/image';
-import { usePathname } from 'next/navigation';
 import NavLink from './components/navlink';
 
 const inter = Inter({ subsets: ['latin'] })
 
-export const metadata = {
-  title: 'Rutherford16',
-  description: 'My Portofolio',
-}
+// export const metadata = {
+//   title: 'Rutherford16',
+//   description: 'My Portofolio',
+// }
 
 export default function RootLayout({ children }) {
-  const router = usePathname();
 
   return (
     <html lang="en">
+      <Head>
+        <title>Rutherford16</title>
+      </Head>
       <body className={inter.className}>
         <main className="flex flex-row w-screen h-screen bg-background text-primary font-firaMono border-primary">
           <section id='sidebar' className='p-3 w-1/4'>

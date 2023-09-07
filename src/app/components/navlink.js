@@ -1,3 +1,5 @@
+'use client'
+
 import Link from "next/link";
 import { usePathname } from 'next/navigation';
 
@@ -7,7 +9,7 @@ export default function NavLink({ children, href }) {
 
     return (
         <>
-            <div className={'-skew-x-12 w-fit ' + (router === href ? 'bg-primary' : 'border')}>
+            <div className={'-skew-x-12 w-fit ' + (router === href ? 'bg-primary' : 'border hover:bg-secondary')}>
                 {router === href ? (
                     <span className={'p-2 block skew-x-12 cursor-default ' + (router === href ? 'text-background' : '')}>{children}</span>
                     ) : (
