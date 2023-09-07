@@ -1,5 +1,7 @@
-export default function Index() {
+export default function Animasi() {
     return (
-        <p>animasi</p>
+        <>
+            <p>Animasinya mana???</p>
+        </>
     )
-  }
+}
