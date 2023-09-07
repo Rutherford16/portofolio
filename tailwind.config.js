@@ -8,8 +8,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        background: '#0c1314',
-        primary: '#b7cacb',
+        background: '#393646',
+        primary: '#F4EEE0',
+        secondary: '#6D5D6E',
+        tertiary: '#4F4557',
       },
       fontFamily: {
         firaCode: ['firaCode'],
