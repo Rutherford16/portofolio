@@ -12,4 +12,9 @@
     font-family: firaMono;
     src: url('/fonts/fira_mono.woff2');
   }
+
+  @font-face {
+    font-family: hemiHead;
+    src: url('/fonts/hemi_head_bd_it.ttf');
+  }
 }

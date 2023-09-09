@@ -16,6 +16,7 @@ module.exports = {
       fontFamily: {
         firaCode: ['firaCode'],
         firaMono: ['firaMono'],
+        hemiHead: ['hemiHead'],
       },
     },
   },
