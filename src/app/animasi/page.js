@@ -45,7 +45,7 @@ export default function Animasi() {
 
     return (
         <>
-            <div className="lg:w-2/4 w-3/4 h-fit pt-3 m-auto">
+            <div className="lg:w-2/4 w-3/4 border h-fit pt-3 m-auto">
                 <svg className="text-white w-full h-full text-5xl font-hemiHead" viewBox="0 0 460 100">
                     <g fill="currentColor">
                         <polygon points="10,95 50,5 50,35" className="leftWing" />

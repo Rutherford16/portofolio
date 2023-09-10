@@ -110,7 +110,7 @@ export default function RootLayout({ children }) {
                     <h3 className='text-xs'>Junior Web Developer</h3>
                   </div>
                 </div>
-                <div className='p-4 pb-0'>
+                <div className='p-4'>
                   <p className='indent-8 text-justify'>
                     Selamat datang di blog saya yang sederhana ini, silahkan menikmati tulisan saya yang random ini sambil mendengarkan lagu kesukaan saya.
                   </p>
@@ -124,10 +124,10 @@ export default function RootLayout({ children }) {
                   </div> */}
                 </div>
               </section>
-              <section id='body' className='lg:border-l w-full h-full p-4 mb-10'>
+              <section id='body' className='lg:border-l w-full min-h-screen p-4 mb-10'>
                 {children}
               </section>
-              <div className={'h-0.5 bg-red-500 fixed bottom-[43px]'} style={{ width: durasi }} />
+              <div className={'h-1 bg-red-500 fixed bottom-[43px]'} style={{ width: durasi }} />
               <nav id='navbar' className='fixed bottom-0 w-full flex flex-row justify-center bg-background shadow-xl border-t'>
                 <NavLink href='/'>Beranda</NavLink>
                 <NavLink href='/animasi'>Animasi</NavLink>
