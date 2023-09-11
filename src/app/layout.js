@@ -130,7 +130,7 @@ export default function RootLayout({ children }) {
               <div className={'h-1 bg-red-500 fixed bottom-[43px]'} style={{ width: durasi }} />
               <nav id='navbar' className='fixed bottom-0 w-full flex flex-row justify-center bg-background border-t'>
                 <NavLink href='/'>Beranda</NavLink>
-                <NavLink href='/Post'>Post</NavLink>
+                <NavLink href='/post'>Post</NavLink>
                 <NavLink href='/animasi'>Animasi</NavLink>
                 <NavLink href='/animasi3'>Animasi3</NavLink>
                 <button onClick={handleClick} className='fixed right-0 bottom-0 mr-2 hover:opacity-80'>

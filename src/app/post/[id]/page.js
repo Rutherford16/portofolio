@@ -3,9 +3,11 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import { marked } from "marked";
+import DOMPurify from "dompurify";
 
 export function generateStaticParams() {
-    return [{ id: '1' }, { id: '2' }, { id: '3' }]
+    return ['1', '2', '3']
 }
 
 // Return a list of `params` to populate the [slug] dynamic segment
@@ -43,7 +45,6 @@ export default function Post({ params }) {
 
     useEffect(() => {
         getPost();
-        console.log(id);
     }, []);
 
     return (
@@ -57,11 +58,9 @@ export default function Post({ params }) {
                     <h5 className="text-xs text-center">Dibuat pada : {post.tanggal}</h5>
                     <hr />
                     <div className="my-5 mx-3">
-                        <p className="indent-8 text-justify">
-                            {post.isi}
-                        </p>
+                        <div className="indent-8 text-justify reset-tailwind" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(marked.parse(post.isi)) }} />
                         {/* <img src="/images/gambar1.png" alt="Contoh gambar" /> */}
-                        <Image src="/images/posts/gambar1.png" alt="Contoh gambar" width={828} height={828} />
+                        <Image src="/images/posts/gambar1.png" alt="Contoh gambar" className="w-auto h-auto" width={828} height={828} />
                     </div>
                 </div>
             ) : (

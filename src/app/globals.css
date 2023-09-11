@@ -17,4 +17,8 @@
     font-family: hemiHead;
     src: url('/fonts/hemi_head_bd_it.ttf');
   }
+
+  .reset-tailwind * {
+    all: revert;
+  }
 }
