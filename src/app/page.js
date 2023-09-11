@@ -26,7 +26,7 @@ export default function Beranda() {
 
   useEffect(() => {
     getData();
-  });
+  }, []);
 
   return (
     <>

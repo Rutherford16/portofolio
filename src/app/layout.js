@@ -91,7 +91,7 @@ export default function RootLayout({ children }) {
               <svg className="text-white w-full h-full text-5xl font-hemiHead" viewBox="0 0 400 100">
                 <g fill="currentColor">
                   <polygon points="10,95 50,5 50,35" className="leftWing" />
-                  <text x="30" y="90" className="text">
+                  <text x="32" y="90" className="text">
                     B<tspan className="letters">lackadders</tspan>
                   </text>
                   <polygon points="100,95 55,5 55,35" className="rightWing" />
@@ -115,7 +115,7 @@ export default function RootLayout({ children }) {
                     Selamat datang di blog saya yang sederhana ini, silahkan menikmati tulisan saya yang random ini sambil mendengarkan lagu kesukaan saya.
                   </p>
                   <audio loop ref={audioRef} onPlay={() => setIsPlaying(true)} onPause={() => setIsPlaying(false)} className='m-auto mt-4'>
-                    {/* <source src="/lagu/12 - The Little Things Give You Away.mp3" type="audio/mpeg" /> */}
+                    <source src="/lagu/12 - The Little Things Give You Away.mp3" type="audio/mpeg" />
                     {/* <source src="/lagu/A Little Piece of Heaven.mp3" type="audio/mpeg" /> */}
                     Sayang sekali browsermu tidak mendukung untuk memutar lagu.
                   </audio>

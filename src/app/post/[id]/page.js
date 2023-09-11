@@ -44,7 +44,7 @@ export default function Post({ params }) {
     useEffect(() => {
         getPost();
         console.log(id);
-    });
+    }, []);
 
     return (
         <>
