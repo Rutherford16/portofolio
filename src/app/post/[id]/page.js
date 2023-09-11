@@ -60,7 +60,7 @@ export default function Post({ params }) {
                     <div className="my-5 mx-3">
                         <div className="indent-8 text-justify reset-tailwind" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(marked.parse(post.isi)) }} />
                         {/* <img src="/images/gambar1.png" alt="Contoh gambar" /> */}
-                        <Image src="/images/posts/gambar1.png" alt="Contoh gambar" className="w-auto h-auto" width={828} height={828} />
+                        {/* <Image src="/images/posts/gambar1.png" alt="Contoh gambar" className="w-auto h-auto" width={828} height={828} /> */}
                     </div>
                 </div>
             ) : (
