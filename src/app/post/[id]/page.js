@@ -1,7 +1,12 @@
 'use client'
 
-import Link from "next/link"
+import Link from "next/link";
+import Image from "next/image";
 import { useState, useEffect } from "react";
+
+export function generateStaticParams() {
+    return [{ id: '1' }, { id: '2' }, { id: '3' }]
+  }
 
 export default function Post({ params }) {
     const [post, setPost] = useState({})
@@ -21,6 +26,7 @@ export default function Post({ params }) {
             .then(function (data) {
                 console.log(data);
                 setPost(data.posts[params.id] || {});
+                console.log(params.id);
                 console.log(data.posts[params.id]);
             });
     };
@@ -32,15 +38,20 @@ export default function Post({ params }) {
     return (
         <>
             {Object.keys(post).length != 0 ? (
-                <div className="first:mt-0 mt-4 w-full border rounded p-4 hover:shadow-xl">
-                    <Link href='/' className="border rounded p-2 hover:underline hover:opacity-90">Kembali</Link>
+                <div className="w-full border rounded p-4">
+                    <div className="flex flex-row justify-end">
+                        <Link href='/' className="border rounded p-2 hover:underline hover:opacity-90">Kembali</Link>
+                    </div>
                     <h1 className="text-2xl text-center">{post.judul}</h1>
                     <h5 className="text-xs text-center">Dibuat pada : {post.tanggal}</h5>
                     <hr />
-                    <p className="indent-8 text-justify my-5 mx-3">
-                        {post.isi}
-                        <img src="/images/gambar1.png" alt="Contoh gambar" />
-                    </p>
+                    <div className="my-5 mx-3">
+                        <p className="indent-8 text-justify">
+                            {post.isi}
+                        </p>
+                        {/* <img src="/images/gambar1.png" alt="Contoh gambar" /> */}
+                        <Image src="/images/posts/gambar1.png" alt="Contoh gambar" width={828} height={828} />
+                    </div>
                 </div>
             ) : (
                 <div className="w-full p-5">

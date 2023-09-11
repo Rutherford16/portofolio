@@ -26,7 +26,6 @@ export default function Beranda() {
 
   useEffect(() => {
     getData();
-    console.log(posts)
   }, []);
 
   return (

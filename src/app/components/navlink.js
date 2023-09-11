@@ -8,7 +8,7 @@ export default function NavLink({ children, href }) {
     const router = usePathname();
 
     return (
-        <div className={'-skew-x-12 w-fit ' + (router === href ? 'bg-primary' : 'border hover:bg-secondary')}>
+        <div className={'-skew-x-12 w-fit transition-transform ' + (router === href ? 'bg-primary' : 'border hover:bg-secondary hover:scale-110')}>
             {router === href ? (
                 <span className={'p-2 block skew-x-12 cursor-default ' + (router === href ? 'text-background' : '')}>{children}</span>
             ) : (

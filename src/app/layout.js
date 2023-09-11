@@ -77,7 +77,7 @@ export default function RootLayout({ children }) {
     } else {
       clearInterval(interval);
     }
-  }, [isPlaying, durasi]);
+  }, [loading, isPlaying]);
 
   return (
     <html lang="en">

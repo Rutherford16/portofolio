@@ -21,7 +21,7 @@ export default function Animasi() {
                 })
                 .add({
                     targets: '.rightWing',
-                    points: '450,35 10,5 40,35',
+                    points: '390,35 10,5 40,35',
                     duration: 3000
                 }, '-=3700')
                 .add({
@@ -46,7 +46,7 @@ export default function Animasi() {
     return (
         <>
             <div className="lg:w-2/4 w-3/4 border h-fit pt-3 m-auto">
-                <svg className="text-white w-full h-full text-5xl font-hemiHead" viewBox="0 0 460 100">
+                <svg className="text-white w-full h-full text-5xl font-hemiHead" viewBox="0 0 400 100">
                     <g fill="currentColor">
                         <polygon points="10,95 50,5 50,35" className="leftWing" />
                         <text x="30" y="90" className="text">
