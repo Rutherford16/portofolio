@@ -6,9 +6,19 @@ import { useState, useEffect } from "react";
 
 export function generateStaticParams() {
     return [{ id: '1' }, { id: '2' }, { id: '3' }]
-  }
+}
+
+// Return a list of `params` to populate the [slug] dynamic segment
+// export async function generateStaticParams() {
+//     const posts = await fetch('http://localhost:3000/post').then((res) => res.json())
+
+//     return posts.map((post) => ({
+//         id: post.id,
+//     }))
+// }
 
 export default function Post({ params }) {
+    const { id } = params
     const [post, setPost] = useState({})
     const getPost = () => {
         fetch('/json/posts.json'
@@ -25,15 +35,15 @@ export default function Post({ params }) {
             })
             .then(function (data) {
                 console.log(data);
-                setPost(data.posts[params.id] || {});
-                console.log(params.id);
-                console.log(data.posts[params.id]);
+                setPost(data.posts[id] || {});
+                console.log(id);
+                console.log(data.posts[id]);
             });
     };
 
     useEffect(() => {
         getPost();
-    }, []);
+    });
 
     return (
         <>
