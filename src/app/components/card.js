@@ -2,7 +2,7 @@ import Link from "next/link"
 
 export default function Card({judul, dibuatKapan, children, href}) {
     return (
-        <div className="first:mt-0 mt-4 w-full border rounded p-4 hover:shadow-xl">
+        <div className="first:mt-0 mt-4 w-full border rounded p-4 hover:shadow-secondary hover:shadow-md">
             <h1 className="text-2xl">{judul}</h1>
             <h5 className="text-xs">Dibuat pada : {dibuatKapan}</h5>
             <hr />

@@ -116,7 +116,7 @@ export default function RootLayout({ children }) {
                   </p>
                   <audio loop ref={audioRef} onPlay={() => setIsPlaying(true)} onPause={() => setIsPlaying(false)} className='m-auto mt-4'>
                     {/* <source src="/lagu/12 - The Little Things Give You Away.mp3" type="audio/mpeg" /> */}
-                    <source src="/lagu/A Little Piece of Heaven.mp3" type="audio/mpeg" />
+                    {/* <source src="/lagu/A Little Piece of Heaven.mp3" type="audio/mpeg" /> */}
                     Sayang sekali browsermu tidak mendukung untuk memutar lagu.
                   </audio>
                   {/* <div className='flex flex-row justify-center'>
@@ -128,9 +128,11 @@ export default function RootLayout({ children }) {
                 {children}
               </section>
               <div className={'h-1 bg-red-500 fixed bottom-[43px]'} style={{ width: durasi }} />
-              <nav id='navbar' className='fixed bottom-0 w-full flex flex-row justify-center bg-background shadow-xl border-t'>
+              <nav id='navbar' className='fixed bottom-0 w-full flex flex-row justify-center bg-background border-t'>
                 <NavLink href='/'>Beranda</NavLink>
+                <NavLink href='/Post'>Post</NavLink>
                 <NavLink href='/animasi'>Animasi</NavLink>
+                <NavLink href='/animasi3'>Animasi3</NavLink>
                 <button onClick={handleClick} className='fixed right-0 bottom-0 mr-2 hover:opacity-80'>
                   {isPlaying ? (
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" viewBox="0 0 20 20" fill="currentColor">
