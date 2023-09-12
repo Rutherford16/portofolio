@@ -13,9 +13,9 @@ export default function RootLayout({ children }) {
   const [durasi, setDurasi] = useState('0.2%');
   const [listLagu, setListLagu] = useState({
     lagu: [
-      '/lagu/12 - The Little Things Give You Away.mp3',
-      '/lagu/A Little Piece of Heaven.mp3',
-      '/lagu/10 Linkin Park - Drawbar.mp3'
+      'Linkin Park - The Little Things Give You Away.mp3',
+      'Avenged Sevenfold - A Little Piece of Heaven.mp3',
+      'Linkin Park - Drawbar.mp3'
     ],
     random: null
   });
@@ -56,7 +56,7 @@ export default function RootLayout({ children }) {
   useEffect(() => {
     let interval = null;
     console.log(listLagu.lagu)
-    console.log(listLagu.random + ' - ' + listLagu.lagu[listLagu.random])
+    console.log(listLagu.random + 1 + ' - ' + listLagu.lagu[listLagu.random])
 
     if (isPlaying) {
       interval = setInterval(() => {
@@ -86,13 +86,16 @@ export default function RootLayout({ children }) {
             <div id='bukanLoading' className='flex lg:flex-row flex-col w-full h-full'>
               <section id='sidebar' className='lg:w-2/5 w-full flex lg:flex-col sm:flex-row flex-col lg:border-b-0 border-b'>
                 <div className='h-fit flex flex-row justify-center sm:border-b-0 p-5 lg:border-b border-b border-secondary'>
-                  <Image src="/images/foto-profil.jpg" alt='Foto Profil' width={114} height={114} className=' rounded-full' />
+                  <Image src="/images/foto-profil.jpg" alt='Foto Profil' width={124} height={114} className=' rounded-full' />
                   <div className='flex flex-col py-8 px-5'>
                     <h1 className='text-2xl'>Rutherford16</h1>
                     <h3 className='text-xs'>Junior Web Developer</h3>
+                    {isPlaying ? (
+                      <marquee className='text-xs'>{listLagu.random + 1 + ' - ' + listLagu.lagu[listLagu.random]}</marquee>
+                    ):('')}
                   </div>
                 </div>
-                <div className='p-4 sm:w-4/6 lg:w-full w-full sm:border-l lg:border-none border-secondary'>
+                <div className='p-4 sm:w-4/6 sm:p-9 lg:p-4 lg:w-full w-full sm:border-l lg:border-none border-secondary'>
                   <p className='indent-8 text-justify'>
                     Selamat datang di blog saya yang sederhana ini, silahkan menikmati tulisan saya yang random ini sambil mendengarkan lagu kesukaan saya.
                   </p>
@@ -100,7 +103,7 @@ export default function RootLayout({ children }) {
                     <input type="text" name="cari" id="cari" className='w-5/6 p-2 text-black focus:outline-none rounded-s-md border' placeholder='Cari' />
                     <button type="submit" className='w-1/6 p-2 rounded-e-md border hover:bg-primary hover:text-black'>Cari</button>
                   </div>
-                  <audio ref={audioRef} onPlay={() => setIsPlaying(true)} onPause={() => setIsPlaying(false)} className='m-auto mt-4' src={listLagu.lagu[listLagu.random]}>
+                  <audio ref={audioRef} onPlay={() => setIsPlaying(true)} onPause={() => setIsPlaying(false)} className='m-auto mt-4' src={'/lagu/' +listLagu.lagu[listLagu.random]}>
                     Sayang sekali browsermu tidak mendukung untuk memutar lagu.
                   </audio>
                   {/* <div className='flex flex-row justify-center'>
