@@ -94,7 +94,7 @@ export default function RootLayout({ children }) {
                   <p className='indent-8 text-justify'>
                     Selamat datang di blog saya yang sederhana ini, silahkan menikmati tulisan saya yang random ini sambil mendengarkan lagu kesukaan saya.
                   </p>
-                  <div className='sticky top-0'>
+                  <div className=''>
                     <input type="text" name="cari" id="cari" className='w-5/6 mt-4 p-2 text-black focus:outline-none rounded-s-md border' placeholder='Cari' />
                     <button type="submit" className='w-1/6 p-2 rounded-e-md border hover:bg-primary hover:text-black'>Cari</button>
                   </div>

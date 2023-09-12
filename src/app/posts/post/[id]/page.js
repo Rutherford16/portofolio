@@ -9,7 +9,7 @@ export async function generateStaticParams() {
 }
 
 export default function Post({ params: { id } }) {
-    const post = posts.find(p => p.id.toString() === id)
+    const post = posts.find(p => p.id.toString() === id) || {};
 
     return (
         <>
