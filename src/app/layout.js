@@ -45,7 +45,7 @@ export default function RootLayout({ children }) {
   }
 
   const randomKan = () => {
-    setListLagu({ ...listLagu, random: (Math.floor(Math.random() * listLagu.lagu.length))});
+    setListLagu({ ...listLagu, random: (Math.floor(Math.random() * listLagu.lagu.length)) });
   }
 
   // console.log(audioRef.current.ended);
@@ -76,25 +76,29 @@ export default function RootLayout({ children }) {
         {loading ? (
           <main className="w-screen h-screen bg-background text-primary font-firaMono border-primary">
             <div id='loading' className="lg:w-2/4 w-3/4 h-full m-auto">
-              <Blackadders loading={selesaiKah}/>
+              <Blackadders loading={selesaiKah} />
             </div>
           </main>
         ) : (
           <main className="max-w-screen min-h-screen bg-background text-primary font-firaMono border-primary">
             <div id='bukanLoading' className='flex lg:flex-row flex-col w-full h-full'>
               <section id='sidebar' className='lg:w-2/5 w-full flex lg:flex-col sm:flex-row flex-col lg:border-b-0 border-b'>
-                <div className='h-fit flex flex-row justify-center sm:border-b-0 sm:border-r p-5 lg:border-b border-b border-secondary'>
+                <div className='h-fit flex flex-row justify-center sm:border-b-0 p-5 lg:border-b border-b border-secondary'>
                   <Image src="/images/foto-profil.jpg" alt='Foto Profil' width={114} height={114} className=' rounded-full' />
                   <div className='flex flex-col py-8 px-5'>
                     <h1 className='text-2xl'>Rutherford16</h1>
                     <h3 className='text-xs'>Junior Web Developer</h3>
                   </div>
                 </div>
-                <div className='p-4 sm:w-4/6 lg:w-full w-full'>
+                <div className='p-4 sm:w-4/6 lg:w-full w-full sm:border-l lg:border-none border-secondary'>
                   <p className='indent-8 text-justify'>
                     Selamat datang di blog saya yang sederhana ini, silahkan menikmati tulisan saya yang random ini sambil mendengarkan lagu kesukaan saya.
                   </p>
-                  <audio ref={audioRef} onPlay={() => setIsPlaying(true)} onPause={() => setIsPlaying(false)} className='m-auto mt-4' src={listLagu.lagu[listLagu.random]}>
+                  <div className='sticky top-0'>
+                    <input type="text" name="cari" id="cari" className='w-5/6 mt-4 p-2 text-black focus:outline-none rounded-s-md border' placeholder='Cari' />
+                    <button type="submit" className='w-1/6 p-2 rounded-e-md border hover:bg-primary hover:text-black'>Cari</button>
+                  </div>
+                  <audio loop ref={audioRef} onPlay={() => setIsPlaying(true)} onPause={() => setIsPlaying(false)} className='m-auto mt-4' src={listLagu.lagu[listLagu.random]}>
                     Sayang sekali browsermu tidak mendukung untuk memutar lagu.
                   </audio>
                   {/* <div className='flex flex-row justify-center'>
