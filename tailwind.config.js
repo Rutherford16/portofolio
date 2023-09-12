@@ -18,7 +18,16 @@ module.exports = {
         firaMono: ['firaMono'],
         hemiHead: ['hemiHead'],
       },
+      typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            color: theme('colors.primary'),
+          },
+        },
+      }),
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography')
+  ],
 }

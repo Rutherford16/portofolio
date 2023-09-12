@@ -42,6 +42,9 @@ export default function RootLayout({ children }) {
     setListLagu({ ...listLagu, random: (Math.floor(Math.random() * listLagu.lagu.length))});
   }
 
+  // console.log(audioRef.current.ended);
+  audioRef.current != null && audioRef.current.ended && randomKan();
+
   useEffect(() => {
     let interval = null;
     console.log(listLagu.lagu)
@@ -53,8 +56,6 @@ export default function RootLayout({ children }) {
           ((Math.floor(audioRef.current.currentTime)) / (Math.floor(audioRef.current.duration) / 100)) + '%'
         );
       }, 10);
-      console.log(audioRef.current.ended);
-      audioRef.current.ended && randomKan();
     } else {
       clearInterval(interval);
     }
@@ -87,7 +88,7 @@ export default function RootLayout({ children }) {
                   <p className='indent-8 text-justify'>
                     Selamat datang di blog saya yang sederhana ini, silahkan menikmati tulisan saya yang random ini sambil mendengarkan lagu kesukaan saya.
                   </p>
-                  <audio loop ref={audioRef} onPlay={() => setIsPlaying(true)} onPause={() => setIsPlaying(false)} className='m-auto mt-4' src={listLagu.lagu[listLagu.random]}>
+                  <audio ref={audioRef} onPlay={() => setIsPlaying(true)} onPause={() => setIsPlaying(false)} className='m-auto mt-4' src={listLagu.lagu[listLagu.random]}>
                     Sayang sekali browsermu tidak mendukung untuk memutar lagu.
                   </audio>
                   {/* <div className='flex flex-row justify-center'>
