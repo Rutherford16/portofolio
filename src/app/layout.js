@@ -4,9 +4,8 @@ import './globals.css';
 import { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 import NavLink from './components/navlink';
-import anime from 'animejs';
 import Blackadders from './animasi/material/blackadders';
-import posts from "@/app/json/posts.json";
+import posts from '@/app/json/posts.json';
 
 export default function RootLayout({ children }) {
   const [loading, setLoading] = useState(true);
@@ -36,7 +35,8 @@ export default function RootLayout({ children }) {
   }
 
   // function randomPost(){
-  //   navLinkRef.current.href = '/posts/post/' + Math.floor(Math.random() * posts.posts.length);
+  //   // navLinkRef.current.href = '/posts/post/' + Math.floor(Math.random() * posts.length);
+  //   console.log('/posts/post/' + Math.floor(Math.random() * posts.length))
   // }
 
   const selesaiKah = (iya) => {
@@ -44,12 +44,14 @@ export default function RootLayout({ children }) {
     randomKan();
   }
 
-  const randomKan = () => {
+  const randomKan = (t) => {
+    // t && audioRef.current.pause();
     setListLagu({ ...listLagu, random: (Math.floor(Math.random() * listLagu.lagu.length)) });
+    t && audioRef.current.readyState === 2 && audioRef.current.play();
   }
 
-  // console.log(audioRef.current.ended);
-  audioRef.current != null && audioRef.current.ended && randomKan();
+  // audioRef.current != null && console.log(audioRef.current.ended);
+  audioRef.current != null && audioRef.current.ended && randomKan(true);
 
   useEffect(() => {
     let interval = null;
@@ -94,11 +96,11 @@ export default function RootLayout({ children }) {
                   <p className='indent-8 text-justify'>
                     Selamat datang di blog saya yang sederhana ini, silahkan menikmati tulisan saya yang random ini sambil mendengarkan lagu kesukaan saya.
                   </p>
-                  <div className=''>
-                    <input type="text" name="cari" id="cari" className='w-5/6 mt-4 p-2 text-black focus:outline-none rounded-s-md border' placeholder='Cari' />
+                  <div className='lg:sticky lg:top-0 mt-4 '>
+                    <input type="text" name="cari" id="cari" className='w-5/6 p-2 text-black focus:outline-none rounded-s-md border' placeholder='Cari' />
                     <button type="submit" className='w-1/6 p-2 rounded-e-md border hover:bg-primary hover:text-black'>Cari</button>
                   </div>
-                  <audio loop ref={audioRef} onPlay={() => setIsPlaying(true)} onPause={() => setIsPlaying(false)} className='m-auto mt-4' src={listLagu.lagu[listLagu.random]}>
+                  <audio ref={audioRef} onPlay={() => setIsPlaying(true)} onPause={() => setIsPlaying(false)} className='m-auto mt-4' src={listLagu.lagu[listLagu.random]}>
                     Sayang sekali browsermu tidak mendukung untuk memutar lagu.
                   </audio>
                   {/* <div className='flex flex-row justify-center'>
@@ -112,7 +114,7 @@ export default function RootLayout({ children }) {
               <div className={'h-1 bg-red-500 fixed bottom-[43px]'} style={{ width: durasi }} />
               <nav id='navbar' className='fixed bottom-0 w-full flex flex-row justify-center bg-background border-t'>
                 <NavLink href='/'>Beranda</NavLink>
-                <NavLink href='/posts'>Post</NavLink>
+                <NavLink href={'/posts/post/' + Math.floor(Math.random() * posts.length)}>Post</NavLink>
                 <NavLink href='/animasi'>Animasi</NavLink>
                 <NavLink href='/animasi3'>Animasi3</NavLink>
                 <button onClick={handleClick} className='fixed right-0 bottom-0 mr-2 hover:opacity-80'>
