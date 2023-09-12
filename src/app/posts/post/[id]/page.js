@@ -1,7 +1,6 @@
 'use client'
 
 import Link from "next/link";
-import { useState, useEffect } from "react";
 import { marked } from "marked";
 import DOMPurify from "dompurify";
 import posts from "@/app/json/posts.json";
@@ -10,15 +9,25 @@ import posts from "@/app/json/posts.json";
 //     return [{ id: '1' }, { id: '2' }, { id: '3' }, { id: '4' }]
 // }
 
+// Post.getInitialProps = async (ctx) => {
+//     return posts.posts.map((p) => ({
+//         id: p.id.toString(),
+//     }))
+// }
+
 export async function generateStaticParams() {
-    return posts.posts.map((p, key) => ({
-        id: p.toString(),
+    return posts.map((p, i) => ({
+        id: p.id.toString(),
     }))
 }
 
-export default function Post({ params }) {
-    const post = posts.posts[params.id] || {};
-    console.log(post);
+export default function Post({ params: { id } }) {
+    const post = posts.find(p => p.id.toString() === id)
+    // const post = posts[id] || {};
+    posts.map((p, i) => (
+        console.log(i)
+    ))
+    console.log(post)
 
     return (
         <>

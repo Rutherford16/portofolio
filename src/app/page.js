@@ -5,7 +5,7 @@ import data from "@/app/json/posts.json"
 import Card from "./components/card"
 
 export default function Beranda() {
-  const posts = data.posts || {};
+  const posts = data || {};
 
   // const [posts, setPosts] = useState({})
   // const getData = () => {
