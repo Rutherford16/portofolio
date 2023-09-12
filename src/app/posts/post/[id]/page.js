@@ -6,15 +6,15 @@ import { marked } from "marked";
 import DOMPurify from "dompurify";
 import posts from "@/app/json/posts.json";
 
-export async function generateStaticParams() {
-    return [{ id: '1' }, { id: '2' }, { id: '3' }, { id: '4' }]
-}
-
 // export async function generateStaticParams() {
-//     return posts.posts.map((p, key) => ({
-//         id: key.toString(),
-//     }))
+//     return [{ id: '1' }, { id: '2' }, { id: '3' }, { id: '4' }]
 // }
+
+export async function generateStaticParams() {
+    return posts.posts.map((p, key) => ({
+        id: key.toString(),
+    }))
+}
 
 export default function Post({ params }) {
     const post = posts.posts[params.id] || {};

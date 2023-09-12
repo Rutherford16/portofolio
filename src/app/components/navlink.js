@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation';
 
 
 export default function NavLink({ children, href }) {
-    const router = usePathname();
+    const router = '/' +  usePathname().split('/')[1];
 
     return (
         <div className={'-skew-x-12 w-fit transition-all ' + (router === href ? 'bg-primary -translate-y-1 font-bold mx-1' : 'border hover:bg-secondary hover:-translate-y-1')}>

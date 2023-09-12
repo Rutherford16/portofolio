@@ -6,6 +6,7 @@ import Image from 'next/image';
 import NavLink from './components/navlink';
 import anime from 'animejs';
 import Blackadders from './animasi/material/blackadders';
+import posts from "@/app/json/posts.json";
 
 export default function RootLayout({ children }) {
   const [loading, setLoading] = useState(true);
@@ -21,6 +22,7 @@ export default function RootLayout({ children }) {
   });
 
   const audioRef = useRef(null);
+  // const navLinkRef = useRef(null);
 
   function handleClick() {
     const nextIsPlaying = !isPlaying;
@@ -32,6 +34,10 @@ export default function RootLayout({ children }) {
       audioRef.current.pause();
     }
   }
+
+  // function randomPost(){
+  //   navLinkRef.current.href = '/posts/post/' + Math.floor(Math.random() * posts.posts.length);
+  // }
 
   const selesaiKah = (iya) => {
     setLoading(iya);
@@ -102,7 +108,7 @@ export default function RootLayout({ children }) {
               <div className={'h-1 bg-red-500 fixed bottom-[43px]'} style={{ width: durasi }} />
               <nav id='navbar' className='fixed bottom-0 w-full flex flex-row justify-center bg-background border-t'>
                 <NavLink href='/'>Beranda</NavLink>
-                <NavLink href='/post'>Post</NavLink>
+                <NavLink href='/posts'>Post</NavLink>
                 <NavLink href='/animasi'>Animasi</NavLink>
                 <NavLink href='/animasi3'>Animasi3</NavLink>
                 <button onClick={handleClick} className='fixed right-0 bottom-0 mr-2 hover:opacity-80'>
