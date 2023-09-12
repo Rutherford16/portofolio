@@ -1,0 +1,145 @@
+1:HL["/_next/static/css/ef5cccd9e07c3ec8.css",{"as":"style"}]
+0:["SIRLAk83CCXYwywCBfdHB",[[["",{"children":["posts",{"children":["post",{"children":[["id","2","d"],{"children":["__PAGE__?{\"id\":\"2\"}",{}]}]}]}]},"$undefined","$undefined",true],"$L2",[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/ef5cccd9e07c3ec8.css","precedence":"next"}]],"$L3"]]]]
+4:I{"id":2457,"chunks":["685:static/chunks/685-ee1bc758d25930a6.js","78:static/chunks/78-81cc85eacd0d63f2.js","509:static/chunks/509-79275f35dc54fbd2.js","185:static/chunks/app/layout-a6f374b81988b314.js"],"name":"","async":false}
+5:I{"id":7767,"chunks":["272:static/chunks/webpack-14bde8ca95fda9cb.js","971:static/chunks/fd9d1056-9593a577cdf5fc4e.js","596:static/chunks/596-b348f0a3a64f5453.js"],"name":"default","async":false}
+6:I{"id":7920,"chunks":["272:static/chunks/webpack-14bde8ca95fda9cb.js","971:static/chunks/fd9d1056-9593a577cdf5fc4e.js","596:static/chunks/596-b348f0a3a64f5453.js"],"name":"default","async":false}
+8:I{"id":6685,"chunks":["685:static/chunks/685-ee1bc758d25930a6.js","823:static/chunks/app/posts/post/[id]/page-900ce08e8f67b856.js"],"name":"","async":false}
+9:T1c0a,<h1>Markdown Quick Reference</h1>
+<p>This guide is a very brief overview, with examples, of the syntax that <a href="http://daringfireball.net/projects/markdown/">Markdown</a> supports. It is itself written in Markdown and you can copy the samples over to the left-hand pane for experimentation. It&#39;s shown as <em>text</em> and not <em>rendered HTML</em>.</p>
+<h1>Simple Text Formatting</h1>
+<p>First thing is first. You can use <em>stars</em> or <em>underscores</em> for italics. <strong>Double stars</strong> and <strong>double underscores</strong> for bold. <em><strong>Three together</strong></em> for <em><strong>both</strong></em>.</p>
+<p>Paragraphs are pretty easy too. Just have a blank line between chunks of text.</p>
+<blockquote>
+<p>This chunk of text is in a block quote. Its multiple lines will all be
+indented a bit from the rest of the text.</p>
+<blockquote>
+<p>Multiple levels of block quotes also work.</p>
+</blockquote>
+</blockquote>
+<p>Sometimes you want to include code, such as when you are explaining how <code>&lt;h1&gt;</code> HTML tags work, or maybe you are a programmer and you are discussing <code>someMethod()</code>.</p>
+<p>If you want to include code and have new
+lines preserved, indent the line with a tab
+or at least four spaces:</p>
+<pre><code>Extra spaces work here too.
+This is also called preformatted text and it is useful for showing examples.
+The text will stay as text, so any *markdown* or &lt;u&gt;HTML&lt;/u&gt; you add will
+not show up formatted. This way you can show markdown examples in a
+markdown document.
+</code></pre>
+<blockquote>
+<pre><code>You can also use preformatted text with your blockquotes
+as long as you add at least five spaces.
+</code></pre>
+</blockquote>
+<h1>Headings</h1>
+<p>There are a couple of ways to make headings. Using three or more equals signs on a line under a heading makes it into an &#39;h1&#39; style. Three or more hyphens under a line makes it &#39;h2&#39; (slightly smaller). You can also use multiple pound symbols (<code>#</code>) before and after a heading. Pounds after the title are ignored. Here are some examples:</p>
+<h1>This is H1</h1>
+<h2>This is H2</h2>
+<h1>This is H1</h1>
+<h2>This is H2</h2>
+<h3>This is H3 with some extra pounds</h3>
+<h4>You get the idea</h4>
+<h5>I don&#39;t need extra pounds at the end</h5>
+<h6>H6 is the max</h6>
+<h1>Links</h1>
+<p>Let&#39;s link to a few sites. First, let&#39;s use the bare URL, like <a href="https://www.github.com">https://www.github.com</a>. Great for text, but ugly for HTML.
+Next is an inline link to <a href="https://www.google.com">Google</a>. A little nicer.
+This is a reference-style link to [Wikipedia] <a href="https://www.wikipedia.org">1</a>.
+Lastly, here&#39;s a pretty link to <a href="https://www.yahoo.com">Yahoo</a>. The reference-style and pretty links both automatically use the links defined below, but they could be defined <em>anywhere</em> in the markdown and are removed from the HTML. The names are also case insensitive, so you can use <a href="https://www.yahoo.com">YaHoO</a> and have it link properly.</p>
+<p>Title attributes may be added to links by adding text after a link.
+This is the <a href="https://www.bing.com" title="Bing">inline link</a> with a &#39;Bing&#39; title.
+You can also go to [W3C] [2] and maybe visit a [friend].
+[2]: <a href="https://w3c.org">https://w3c.org</a> (The W3C puts out specs for web-based things)
+[Friend]: <a href="https://facebook.com">https://facebook.com</a> &#39;Facebook!&#39;</p>
+<p>Email addresses in plain text are not linked: <a href="mailto:test@example.com">test@example.com</a>.
+Email addresses wrapped in angle brackets are linked: <a href="mailto:test@example.com">test@example.com</a>.
+They are also obfuscated so that email harvesting spam robots hopefully won&#39;t get them.</p>
+<h1>Lists</h1>
+<ul>
+<li>This is a bulleted list</li>
+<li>Great for shopping lists</li>
+</ul>
+<ul>
+<li>You can also use hyphens</li>
+</ul>
+<ul>
+<li>Or plus symbols</li>
+</ul>
+<p>The above is an &#39;unordered&#39; list. Now, on for a bit of order.</p>
+<ol>
+<li>Numbered lists are also easy</li>
+<li>Just start with a number</li>
+<li>However, the actual number doesn&#39;t matter when converted to HTML.</li>
+<li>This will still show up as 4.</li>
+</ol>
+<p>You might want a few advanced lists:</p>
+<ul>
+<li><p>This top-level list is wrapped in paragraph tags</p>
+</li>
+<li><p>This generates an extra space between each top-level item.</p>
+</li>
+<li><p>You do it by adding a blank line</p>
+</li>
+<li><p>This nested list also has blank lines between the list items.</p>
+</li>
+<li><p>How to create nested lists</p>
+<ol>
+<li>Start your regular list</li>
+<li>Indent nested lists with two spaces</li>
+<li>Further nesting means you should indent with two more spaces</li>
+</ol>
+<ul>
+<li>This line is indented with four spaces.</li>
+</ul>
+<ul>
+<li>List items can be quite lengthy. You can keep typing and either continue
+them on the next line with no indentation.</li>
+</ul>
+</li>
+<li><p>Alternately, if that looks ugly, you can also
+indent the next line a bit for a prettier look.</p>
+</li>
+<li><p>You can put large blocks of text in your list by just indenting with two spaces.</p>
+<p>This is formatted the same as code, but you can inspect the HTML</p>
+<p>and find that it&#39;s just wrapped in a <code>&lt;p&gt;</code> tag and <em>won&#39;t</em> be shown</p>
+<p>as preformatted text.</p>
+<p>You can keep adding more and more paragraphs to a single
+list item by adding the traditional blank line and then keep
+on indenting the paragraphs with two spaces.</p>
+<p>You really only need to indent the first line,</p>
+</li>
+</ul>
+<p>but that looks ugly.</p>
+<ul>
+<li><p>Lists support blockquotes</p>
+<blockquote>
+<p>Just like this example here. By the way, you can
+nest lists inside blockquotes!</p>
+<ul>
+<li>Fantastic!</li>
+</ul>
+</blockquote>
+</li>
+<li><p>Lists support preformatted text</p>
+<pre><code>You just need to indent an additional four spaces.
+</code></pre>
+</li>
+</ul>
+<h1>Even More</h1>
+<h2>Horizontal Rule</h2>
+<p>If you need a horizontal rule you just need to put at least three hyphens, asterisks, or underscores on a line by themselves. You can also even put spaces between the characters.</p>
+<hr>
+<hr>
+<hr>
+<p>Those three all produced horizontal lines. Keep in mind that three hyphens under any text turns that text into a heading, so add a blank like if you use hyphens.</p>
+<h2>Images</h2>
+<p>Images work exactly like links, but they have exclamation points in front. They work with references and titles too.</p>
+<p><img src="https://www.google.com/images/errors/logo_sm.gif" alt="Google Logo"> and <img src="/images/posts/gambar1.png" alt="Happy" title="contoh gambar">.</p>
+<h2>Inline HTML</h2>
+<p>If markdown is too limiting, you can just insert your own <strike>crazy</strike> HTML. Span-level HTML <u>can <em>still</em> use markdown</u>. Block level elements must be separated from text by a blank line and must not have any spaces before the opening and closing HTML.</p>
+<div style='font-family: 'Comic Sans MS', 'Comic Sans', cursive;'>
+It is a pity, but markdown does **not** work in here for most markdown parsers.
+[Marked] handles it pretty well.
+</div>2:[null,["$","$L4",null,{"children":["$","$L5",null,{"parallelRouterKey":"children","segmentPath":["children"],"loading":"$undefined","loadingStyles":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","notFound":[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":"404"}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],"notFoundStyles":[],"childProp":{"current":["$","$L5",null,{"parallelRouterKey":"children","segmentPath":["children","posts","children"],"loading":"$undefined","loadingStyles":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","childProp":{"current":["$","$L5",null,{"parallelRouterKey":"children","segmentPath":["children","posts","children","post","children"],"loading":"$undefined","loadingStyles":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","childProp":{"current":["$","$L5",null,{"parallelRouterKey":"children","segmentPath":["children","posts","children","post","children",["id","2","d"],"children"],"loading":"$undefined","loadingStyles":"$undefined","hasLoading":false,"error":"$undefined","errorStyles":"$undefined","template":["$","$L6",null,{}],"templateStyles":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","childProp":{"current":["$L7",["$","div",null,{"className":"w-full border rounded p-4","children":[["$","div",null,{"className":"flex flex-row justify-end sticky top-0 bg-background p-2 mb-2","children":["$","$L8",null,{"href":"/","className":"border rounded p-2 hover:underline hover:opacity-90","children":"Kembali"}]}],["$","h1",null,{"className":"text-2xl text-center font-bold","children":"Markdown Quick Reference"}],["$","h5",null,{"className":"text-xs text-center","children":["Dibuat pada : ","12/3/1995"]}],["$","hr",null,{}],["$","article",null,{"className":"indent-8 text-justify w-full max-w-none prose mt-4 prose-blockquote:text-primary prose-blockquote:bg-secondary prose-blockquote:p-1 prose-strong:text-primary prose-headings:text-primary prose-code:text-red-400 prose-a:no-underline prose-a:text-blue-700 hover:prose-a:opacity-80","dangerouslySetInnerHTML":{"__html":"$9"}}]]}],null],"segment":"__PAGE__?{\"id\":\"2\"}"},"styles":[]}],"segment":["id","2","d"]},"styles":[]}],"segment":"post"},"styles":[]}],"segment":"posts"},"styles":[]}],"params":{}}],null]
+3:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","link","2",{"rel":"icon","href":"/favicon.ico","type":"image/x-icon","sizes":"256x256"}]]
+7:null
