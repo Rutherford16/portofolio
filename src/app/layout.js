@@ -10,7 +10,7 @@ import posts from '@/app/json/posts.json';
 export default function RootLayout({ children }) {
   const [loading, setLoading] = useState(true);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [durasi, setDurasi] = useState('0.2%');
+  const [durasi, setDurasi] = useState('0.4%');
   const [listLagu, setListLagu] = useState({
     lagu: [
       'Linkin Park - The Little Things Give You Away.mp3',
@@ -21,23 +21,18 @@ export default function RootLayout({ children }) {
   });
 
   const audioRef = useRef(null);
-  // const navLinkRef = useRef(null);
 
-  function handleClick() {
+  function mainkan() {
     const nextIsPlaying = !isPlaying;
     setIsPlaying(nextIsPlaying);
 
     if (nextIsPlaying) {
       audioRef.current.play();
+      console.log('Memainkan: ' + (listLagu.random + 1) + ' - ' + listLagu.lagu[listLagu.random])
     } else {
       audioRef.current.pause();
     }
   }
-
-  // function randomPost(){
-  //   // navLinkRef.current.href = '/posts/post/' + Math.floor(Math.random() * posts.length);
-  //   console.log('/posts/post/' + Math.floor(Math.random() * posts.length))
-  // }
 
   const selesaiKah = (iya) => {
     setLoading(iya);
@@ -45,29 +40,39 @@ export default function RootLayout({ children }) {
   }
 
   const randomKan = (t) => {
-    // t && audioRef.current.pause();
-    setListLagu({ ...listLagu, random: (Math.floor(Math.random() * listLagu.lagu.length)) });
-    t && audioRef.current.readyState === 2 && audioRef.current.play();
+    // t && console.log(listLagu.random + 1 + ' - ' + listLagu.lagu[listLagu.random])
+    let values = []
+    for(let i = 0; i < listLagu.lagu.length; i++){
+      values.push(i);
+    }
+    let random = values.splice(Math.random()*values.length, 1)[0]
+    console.log(random)
+    //listLagu.lagu.length
+    setListLagu({ ...listLagu, random: random });
+    setTimeout(() => {
+      t && console.log(listLagu.random + 1 + ' - ' + listLagu.lagu[listLagu.random])
+      t && mainkan()
+    }, 1500);
   }
-
-  // audioRef.current != null && console.log(audioRef.current.ended);
-  audioRef.current != null && audioRef.current.ended && randomKan(true);
 
   useEffect(() => {
     let interval = null;
-    console.log(listLagu.lagu)
-    console.log(listLagu.random + 1 + ' - ' + listLagu.lagu[listLagu.random])
+
+    if (!isPlaying) {
+      audioRef.current != null && audioRef.current.ended && randomKan(audioRef.current.ended);
+    }
 
     if (isPlaying) {
       interval = setInterval(() => {
-        setDurasi(
-          ((Math.floor(audioRef.current.currentTime)) / (Math.floor(audioRef.current.duration) / 100)) + '%'
-        );
+        audioRef.current != null &&
+          setDurasi(
+            ((Math.floor(audioRef.current.currentTime)) / (Math.floor(audioRef.current.duration) / 100)) + '%'
+          );
       }, 10);
     } else {
       clearInterval(interval);
     }
-  }, [isPlaying]);
+  }, [isPlaying, audioRef.current]);
 
   return (
     <html lang="en">
@@ -85,14 +90,16 @@ export default function RootLayout({ children }) {
           <main className="max-w-screen min-h-screen bg-background text-primary font-firaMono border-primary">
             <div id='bukanLoading' className='flex lg:flex-row flex-col w-full h-full'>
               <section id='sidebar' className='lg:w-2/5 w-full flex lg:flex-col sm:flex-row flex-col lg:border-b-0 border-b'>
-                <div className='h-fit flex flex-row justify-center sm:border-b-0 p-5 lg:border-b border-b border-secondary'>
-                  <Image src="/images/foto-profil.jpg" alt='Foto Profil' width={124} height={114} className=' rounded-full' />
-                  <div className='flex flex-col py-8 px-5'>
+                <div className='h-fit sm:w-4/6 sm:p-9 lg:p-4 lg:w-full w-full flex flex-row justify-center sm:border-b-0 p-5 lg:border-b border-b border-secondary'>
+                  <Image src="/images/foto-profil.jpg" alt='Foto Profil' width={24} height={24} className=' rounded-full w-2/5 h-auto' />
+                  <div className='flex flex-col pt-11 px-5'>
                     <h1 className='text-2xl'>Rutherford16</h1>
                     <h3 className='text-xs'>Junior Web Developer</h3>
                     {isPlaying ? (
-                      <marquee className='text-xs'>{listLagu.random + 1 + ' - ' + listLagu.lagu[listLagu.random]}</marquee>
-                    ):('')}
+                      <marquee className='text-xs' scrollamount='4'>{listLagu.random + 1 + ' - ' + listLagu.lagu[listLagu.random].split('.')[0]}</marquee>
+                    ) : (
+                      <span className='text-xs'>{listLagu.random + 1 + ' - ' + listLagu.lagu[listLagu.random].split('.')[0]}</span>
+                    )}
                   </div>
                 </div>
                 <div className='p-4 sm:w-4/6 sm:p-9 lg:p-4 lg:w-full w-full sm:border-l lg:border-none border-secondary'>
@@ -103,7 +110,7 @@ export default function RootLayout({ children }) {
                     <input type="text" name="cari" id="cari" className='w-5/6 p-2 text-black focus:outline-none rounded-s-md border' placeholder='Cari' />
                     <button type="submit" className='w-1/6 p-2 rounded-e-md border hover:bg-primary hover:text-black'>Cari</button>
                   </div>
-                  <audio ref={audioRef} onPlay={() => setIsPlaying(true)} onPause={() => setIsPlaying(false)} className='m-auto mt-4' src={'/lagu/' +listLagu.lagu[listLagu.random]}>
+                  <audio ref={audioRef} onPlay={() => setIsPlaying(true)} onPause={() => setIsPlaying(false)} className='m-auto mt-4' src={'/lagu/' + listLagu.lagu[listLagu.random]}>
                     Sayang sekali browsermu tidak mendukung untuk memutar lagu.
                   </audio>
                   {/* <div className='flex flex-row justify-center'>
@@ -114,13 +121,13 @@ export default function RootLayout({ children }) {
               <section id='body' className='lg:border-l w-full min-h-screen p-4 mb-10'>
                 {children}
               </section>
-              <div className={'h-1 bg-red-500 fixed bottom-[43px]'} style={{ width: durasi }} />
-              <nav id='navbar' className='fixed bottom-0 w-full flex flex-row justify-center bg-background border-t'>
+              <div className={'h-1 bg-red-500 fixed bottom-0 z-10'} style={{ width: durasi }} />
+              <nav id='navbar' className='fixed bottom-0 w-full flex flex-row justify-center bg-background border-t pb-1'>
                 <NavLink href='/'>Beranda</NavLink>
                 <NavLink href={'/posts/post/' + Math.floor(Math.random() * posts.length)}>Post</NavLink>
                 <NavLink href='/animasi'>Animasi</NavLink>
-                <NavLink href='/animasi3'>Animasi3</NavLink>
-                <button onClick={handleClick} className='fixed right-0 bottom-0 mr-2 hover:opacity-80'>
+                {/* <NavLink href='/animasi3'>Animasi3</NavLink> */}
+                <button onClick={mainkan} className='fixed right-0 bottom-1 mr-2 hover:opacity-80'>
                   {isPlaying ? (
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" viewBox="0 0 20 20" fill="currentColor">
                       <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zM7 8a1 1 0 012 0v4a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v4a1 1 0 102 0V8a1 1 0 00-1-1z" clipRule="evenodd"></path>

@@ -17,10 +17,10 @@ export default function Post({ params: { id } }) {
             {Object.keys(post).length != 0 ? (
                 <div className="w-full border rounded p-4">
                     <NavBarPost/>
-                    <h1 className="text-2xl text-center font-bold">{post.judul}</h1>
+                    <h1 className="text-4xl text-center font-bold mb-2">{post.judul}</h1>
                     <h5 className="text-xs text-center">Dibuat pada : {post.tanggal}</h5>
                     <hr />
-                    <article className="indent-8 text-justify w-full max-w-none prose mt-4 prose-blockquote:text-primary prose-blockquote:bg-secondary prose-blockquote:p-1 prose-blockquote:pr-4 prose-strong:text-primary prose-headings:text-primary prose-code:text-red-400 prose-a:no-underline prose-a:text-blue-700 hover:prose-a:opacity-80" dangerouslySetInnerHTML={{ __html: marked.parse(post.isi) }} />
+                    <article className="w-full max-w-none prose mt-4 prose-blockquote:text-primary prose-blockquote:bg-secondary prose-blockquote:p-1 prose-blockquote:pr-4 prose-strong:text-primary prose-headings:text-primary prose-code:text-red-400 prose-a:no-underline prose-a:text-blue-700 hover:prose-a:opacity-80" dangerouslySetInnerHTML={{ __html: marked.parse(post.isi) }} />
                 </div>
             ) : (
                 <div className="w-full p-5">
