@@ -1,9 +1,11 @@
 export default function LoadingComponent() {
     return (
         <>
-            <div className="animate-pulse w-full flex flex-row justify-center items-center">
-                <div class="rounded-full bg-primary h-5 w-5" />
-                Loading
+            <div className="w-full h-2/4 flex flex-col justify-center items-center">
+                <div className="rounded-full animate-spin border border-primary opacity-50 h-5 w-5">
+                    <div className="rounded-full border-r-4 h-5 w-5" />
+                </div>
+                Sedang memuat
             </div>
         </>
     )

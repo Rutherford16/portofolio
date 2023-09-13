@@ -42,10 +42,10 @@ export default function RootLayout({ children }) {
   function random(){
     let newRandom = Math.floor(Math.random()*listLagu.lagu.length);
     if(newRandom != listLagu.random) {
-      console.log('udah dapat' + newRandom)
+      console.log('udah ' + newRandom)
     return setListLagu({ ...listLagu, random: newRandom });
     } else {
-      console.log('belum dapat' + newRandom)
+      console.log('masih sama ' + newRandom)
       return random();
     }
   }
@@ -55,7 +55,7 @@ export default function RootLayout({ children }) {
     setTimeout(() => {
       t && mainkan()
       t && console.log(listLagu.random + 1 + ' - ' + listLagu.lagu[listLagu.random])
-    }, 1500);
+    }, 1000);
   }
 
   useEffect(() => {
@@ -124,7 +124,7 @@ export default function RootLayout({ children }) {
               <section id='body' className='lg:border-l w-full min-h-screen p-4 mb-10'>
                 {children}
               </section>
-              <div className={'h-1 bg-red-500 fixed bottom-0 z-10'} style={{ width: durasi }} />
+              <div className={'h-1 bg-red-500 fixed bottom-0 z-10 transition-all'} style={{ width: durasi }} />
               <nav id='navbar' className='fixed bottom-0 w-full flex flex-row justify-center bg-background border-t pb-1'>
                 <NavLink href='/'>Beranda</NavLink>
                 <NavLink href={'/posts/post/' + Math.floor(Math.random() * posts.length)}>Post</NavLink>
