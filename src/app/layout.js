@@ -43,15 +43,15 @@ export default function RootLayout({ children }) {
     let newRandom = Math.floor(Math.random()*listLagu.lagu.length);
     if(newRandom != listLagu.random) {
       console.log('udah dapat' + newRandom)
-      return newRandom;
+    return setListLagu({ ...listLagu, random: newRandom });
     } else {
       console.log('belum dapat' + newRandom)
-      random();
+      return random();
     }
   }
 
   const randomKan = (t) => {
-    setListLagu({ ...listLagu, random: random() });
+    random()
     setTimeout(() => {
       t && mainkan()
       t && console.log(listLagu.random + 1 + ' - ' + listLagu.lagu[listLagu.random])
