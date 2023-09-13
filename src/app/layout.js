@@ -13,9 +13,9 @@ export default function RootLayout({ children }) {
   const [durasi, setDurasi] = useState('0.4%');
   const [listLagu, setListLagu] = useState({
     lagu: [
-      'Linkin Park - The Little Things Give You Away.mp3',
-      'Avenged Sevenfold - A Little Piece of Heaven.mp3',
-      'Linkin Park - Drawbar.mp3'
+      'Linkin Park - The Little Things Give You Away',
+      'Avenged Sevenfold - A Little Piece of Heaven',
+      'Linkin Park - Drawbar'
     ],
     random: null
   });
@@ -39,19 +39,22 @@ export default function RootLayout({ children }) {
     randomKan();
   }
 
-  const randomKan = (t) => {
-    // t && console.log(listLagu.random + 1 + ' - ' + listLagu.lagu[listLagu.random])
-    let values = []
-    for(let i = 0; i < listLagu.lagu.length; i++){
-      values.push(i);
+  function random(){
+    let newRandom = Math.floor(Math.random()*listLagu.lagu.length);
+    if(newRandom != listLagu.random) {
+      console.log('udah dapat' + newRandom)
+      return newRandom;
+    } else {
+      console.log('belum dapat' + newRandom)
+      random();
     }
-    let random = values.splice(Math.random()*values.length, 1)[0]
-    console.log(random)
-    //listLagu.lagu.length
-    setListLagu({ ...listLagu, random: random });
+  }
+
+  const randomKan = (t) => {
+    setListLagu({ ...listLagu, random: random() });
     setTimeout(() => {
-      t && console.log(listLagu.random + 1 + ' - ' + listLagu.lagu[listLagu.random])
       t && mainkan()
+      t && console.log(listLagu.random + 1 + ' - ' + listLagu.lagu[listLagu.random])
     }, 1500);
   }
 
@@ -96,9 +99,9 @@ export default function RootLayout({ children }) {
                     <h1 className='text-2xl'>Rutherford16</h1>
                     <h3 className='text-xs'>Junior Web Developer</h3>
                     {isPlaying ? (
-                      <marquee className='text-xs' scrollamount='4'>{listLagu.random + 1 + ' - ' + listLagu.lagu[listLagu.random].split('.')[0]}</marquee>
+                      <marquee className='text-xs' scrollamount='4'>{listLagu.random + 1 + ' - ' + listLagu.lagu[listLagu.random]}</marquee>
                     ) : (
-                      <span className='text-xs'>{listLagu.random + 1 + ' - ' + listLagu.lagu[listLagu.random].split('.')[0]}</span>
+                      <span className='text-xs'>{listLagu.random + 1 + ' - ' + listLagu.lagu[listLagu.random]}</span>
                     )}
                   </div>
                 </div>
@@ -110,7 +113,7 @@ export default function RootLayout({ children }) {
                     <input type="text" name="cari" id="cari" className='w-5/6 p-2 text-black focus:outline-none rounded-s-md border' placeholder='Cari' />
                     <button type="submit" className='w-1/6 p-2 rounded-e-md border hover:bg-primary hover:text-black'>Cari</button>
                   </div>
-                  <audio ref={audioRef} onPlay={() => setIsPlaying(true)} onPause={() => setIsPlaying(false)} className='m-auto mt-4' src={'/lagu/' + listLagu.lagu[listLagu.random]}>
+                  <audio ref={audioRef} onPlay={() => setIsPlaying(true)} onPause={() => setIsPlaying(false)} className='m-auto mt-4' src={'/lagu/' + listLagu.lagu[listLagu.random] + '.mp3'}>
                     Sayang sekali browsermu tidak mendukung untuk memutar lagu.
                   </audio>
                   {/* <div className='flex flex-row justify-center'>

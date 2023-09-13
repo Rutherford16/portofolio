@@ -1,38 +1,17 @@
 'use client'
 
-import { useState, useEffect } from "react"
 import data from "@/app/json/posts.json"
 import Card from "./components/card"
+import Link from "next/link";
 
 export default function Beranda() {
   const posts = data || {};
 
-  // const [posts, setPosts] = useState({})
-  // const getData = () => {
-  //   fetch('/json/posts.json'
-  //     , {
-  //       headers: {
-  //         'Content-Type': 'application/json',
-  //         'Accept': 'application/json'
-  //       }
-  //     }
-  //   )
-  //     .then(function (response) {
-  //       console.log(response);
-  //       return response.json();
-  //     })
-  //     .then(function (data) {
-  //       console.log(data);
-  //       setPosts(data.posts);
-  //     });
-  // };
-
-  // useEffect(() => {
-  //   getData();
-  // }, []);
-
   return (
     <>
+      <div className="flex flex-row justify-end h-fit w-full">
+        <Link href='/texteditor' className="p-2 bg-secondary rounded hover:opacity-90">Text Editor</Link>
+      </div>
       {Array.isArray(posts) && posts.map((post, key) =>
         <Card key={key} judul={post.judul} dibuatKapan={post.tanggal} href={'/posts/post/' + key}>
           {post.slug}
