@@ -1,9 +1,9 @@
-1:HL["/_next/static/css/78115f25f7ae0b2e.css",{"as":"style"}]
-0:["MyY-ecQI81kS_vySqguIp",[[["",{"children":["posts",{"children":["post",{"children":[["id","2","d"],{"children":["__PAGE__?{\"id\":\"2\"}",{}]}]}]}]},"$undefined","$undefined",true],"$L2",[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/78115f25f7ae0b2e.css","precedence":"next"}]],"$L3"]]]]
-4:I{"id":2457,"chunks":["176:static/chunks/176-e947a604fe73984c.js","674:static/chunks/674-69d48e687c8be81b.js","758:static/chunks/758-ed31054437757d4c.js","185:static/chunks/app/layout-53c3e8cae7d31cf9.js"],"name":"","async":false}
-5:I{"id":7767,"chunks":["272:static/chunks/webpack-802ada373d31b0f9.js","971:static/chunks/fd9d1056-186bb04d793e8055.js","596:static/chunks/596-296e2d563f564836.js"],"name":"default","async":false}
-6:I{"id":7920,"chunks":["272:static/chunks/webpack-802ada373d31b0f9.js","971:static/chunks/fd9d1056-186bb04d793e8055.js","596:static/chunks/596-296e2d563f564836.js"],"name":"default","async":false}
-8:I{"id":6079,"chunks":["176:static/chunks/176-e947a604fe73984c.js","823:static/chunks/app/posts/post/[id]/page-4f6eeccc76498704.js"],"name":"","async":false}
+1:HL["/_next/static/css/bc9b3e47dc00e2a8.css",{"as":"style"}]
+0:["OejjlXS2N_YrZcquYayjL",[[["",{"children":["posts",{"children":["post",{"children":[["id","2","d"],{"children":["__PAGE__?{\"id\":\"2\"}",{}]}]}]}]},"$undefined","$undefined",true],"$L2",[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/bc9b3e47dc00e2a8.css","precedence":"next"}]],"$L3"]]]]
+4:I{"id":8275,"chunks":["176:static/chunks/176-fb12ea796511131a.js","674:static/chunks/674-69d48e687c8be81b.js","758:static/chunks/758-ed31054437757d4c.js","185:static/chunks/app/layout-f6ab655985eaf83f.js"],"name":"","async":false}
+5:I{"id":7767,"chunks":["272:static/chunks/webpack-8a4d9baca2f7bf7f.js","971:static/chunks/fd9d1056-186bb04d793e8055.js","596:static/chunks/596-296e2d563f564836.js"],"name":"default","async":false}
+6:I{"id":7920,"chunks":["272:static/chunks/webpack-8a4d9baca2f7bf7f.js","971:static/chunks/fd9d1056-186bb04d793e8055.js","596:static/chunks/596-296e2d563f564836.js"],"name":"default","async":false}
+8:I{"id":6079,"chunks":["176:static/chunks/176-fb12ea796511131a.js","823:static/chunks/app/posts/post/[id]/page-423e8b91c6d9ce9f.js"],"name":"","async":false}
 9:T1c0a,<h1>Markdown Quick Reference</h1>
 <p>This guide is a very brief overview, with examples, of the syntax that <a href="http://daringfireball.net/projects/markdown/">Markdown</a> supports. It is itself written in Markdown and you can copy the samples over to the left-hand pane for experimentation. It&#39;s shown as <em>text</em> and not <em>rendered HTML</em>.</p>
 <h1>Simple Text Formatting</h1>
