@@ -6,6 +6,7 @@ import Image from 'next/image';
 import NavLink from './components/navlink';
 import Blackadders from './animasi/material/blackadders';
 import posts from '@/app/json/posts.json';
+import Badge from './components/badge';
 
 export default function RootLayout({ children }) {
   const [loading, setLoading] = useState(true);
@@ -39,11 +40,11 @@ export default function RootLayout({ children }) {
     randomKan();
   }
 
-  function random(){
-    let newRandom = Math.floor(Math.random()*listLagu.lagu.length);
-    if(newRandom != listLagu.random) {
+  function random() {
+    let newRandom = Math.floor(Math.random() * listLagu.lagu.length);
+    if (newRandom != listLagu.random) {
       console.log('udah ' + newRandom)
-    return setListLagu({ ...listLagu, random: newRandom });
+      return setListLagu({ ...listLagu, random: newRandom });
     } else {
       console.log('masih sama ' + newRandom)
       return random();
@@ -107,12 +108,19 @@ export default function RootLayout({ children }) {
                 </div>
                 <div className='p-4 sm:w-4/6 sm:p-9 lg:p-4 lg:w-full w-full sm:border-l lg:border-none border-secondary'>
                   <p className='indent-8 text-justify'>
-                    Selamat datang di blog saya yang sederhana ini, silahkan menikmati tulisan saya yang random ini sambil mendengarkan lagu kesukaan saya.
+                    Selamat datang di blog saya yang sederhana ini. Perkenalkan nama saya Ronny Hidayat, saya hanyalah seseorang yang memiliki hobi dalam programming. Silahkan menikmati tulisan saya yang random ini sambil mendengarkan lagu kesukaan saya.
                   </p>
-                  <div className='lg:sticky lg:top-0 mt-4 '>
-                    <input type="text" name="cari" id="cari" className='w-5/6 p-2 text-black focus:outline-none rounded-s-md border' placeholder='Cari' />
-                    <button type="submit" className='w-1/6 p-2 rounded-e-md border hover:bg-primary hover:text-black'>Cari</button>
-                  </div>
+                  {/* <div className='pt-4'>
+                    <h3 className='text-center font-bold'>Keahlian</h3>
+                    <div className='grid grid-cols-3 gap-4 p-2'>
+                      <Badge>HTML</Badge>
+                      <Badge>CSS</Badge>
+                      <Badge>JavaScript</Badge>
+                      <Badge>PHP</Badge>
+                      <Badge>MySQL</Badge>
+                      <Badge>C/C++</Badge>
+                    </div>
+                  </div> */}
                   <audio ref={audioRef} onPlay={() => setIsPlaying(true)} onPause={() => setIsPlaying(false)} className='m-auto mt-4' src={'/lagu/' + listLagu.lagu[listLagu.random] + '.mp3'}>
                     Sayang sekali browsermu tidak mendukung untuk memutar lagu.
                   </audio>
@@ -124,7 +132,7 @@ export default function RootLayout({ children }) {
               <section id='body' className='lg:border-l w-full min-h-screen p-4 mb-10'>
                 {children}
               </section>
-              <div className={'h-1 bg-red-500 fixed bottom-0 z-10 transition-all'} style={{ width: durasi }} />
+              <div className={'h-1 bg-primary fixed bottom-0 z-10 transition-all'} style={{ width: durasi }} />
               <nav id='navbar' className='fixed bottom-0 w-full flex flex-row justify-center bg-background border-t pb-1'>
                 <NavLink href='/'>Beranda</NavLink>
                 <NavLink href={'/posts/post/' + Math.floor(Math.random() * posts.length)}>Post</NavLink>

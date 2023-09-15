@@ -3,6 +3,7 @@
 import data from "@/app/json/posts.json"
 import Card from "./components/card"
 import Link from "next/link";
+import Pagination from "./components/pagination";
 
 export default function Beranda() {
   // const posts = getSortedPostsData || {};
@@ -10,7 +11,11 @@ export default function Beranda() {
 
   return (
     <>
-      <div className="flex flex-row justify-end h-fit w-full">
+      <div className="sticky top-0 flex flex-row justify-between h-fit w-full backdrop-blur-md py-3">
+        <div className='w-3/6 flex flex-row'>
+          <input type="text" name="cari" id="cari" className='w-5/6 p-2 text-black focus:outline-none rounded-s-md border' placeholder='Cari' />
+          <button type="submit" className='p-2 rounded-e-md border hover:bg-primary hover:text-black'>Cari</button>
+        </div>
         <Link href='/texteditor' className="p-2 border rounded hover:opacity-90">Text Editor</Link>
       </div>
       {Array.isArray(posts) && posts.map((post, key) =>
@@ -18,6 +23,7 @@ export default function Beranda() {
           {post.slug}
         </Card>
       )}
+      <Pagination data={[1,2,3,4,5]}></Pagination>
     </>
   )
 }
