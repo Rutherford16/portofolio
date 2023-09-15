@@ -11,11 +11,13 @@
     "export": "next export"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.17",
     "animejs": "^3.2.1",
     "autoprefixer": "10.4.15",
     "dompurify": "^3.0.5",
     "eslint": "8.48.0",
     "eslint-config-next": "13.4.19",
+    "gray-matter": "^4.0.3",
     "marked": "^9.0.0",
     "next": "13.4.19",
     "postcss": "8.4.29",

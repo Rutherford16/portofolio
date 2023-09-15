@@ -17,6 +17,7 @@ module.exports = {
         firaCode: ['firaCode'],
         firaMono: ['firaMono'],
         hemiHead: ['hemiHead'],
+        podiumSharp: ['podiumSharp'],
       },
       typography: (theme) => ({
         DEFAULT: {
