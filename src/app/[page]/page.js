@@ -29,7 +29,7 @@ export default function Page({ params: { page } }) {
                 <Link href='/texteditor' className="p-2 border rounded hover:opacity-90">Text Editor</Link>
             </div>
             {Array.isArray(posts) && posts.map((post, key) =>
-                <Card key={key} judul={post.judul} dibuatKapan={post.tanggal} href={'/posts/post/' + key}>
+                <Card key={key} judul={post.judul} dibuatKapan={post.tanggal} href={'/posts/post/' + (offset+key)}>
                     {post.slug}
                 </Card>
             )}
