@@ -50,7 +50,7 @@ export default function Bankaltimtara() {
     }, []);
 
     return (
-        <div id="box" className='flex justify-center w-fit p-5 bg-white'>
+        <div id="box" className='flex justify-center w-fit p-5 bg-white font-sans'>
             <svg viewBox="0 0 145 100" className='w-full h-full'>
                 <g id="logo">
                     <path id="b" fill="#05437c" style={{ strokeWidth: ".2", stroke: "#05437c" }}

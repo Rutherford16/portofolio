@@ -5,6 +5,7 @@ import Modal from "../components/modal"
 import Blackadders from "./material/blackadders"
 import Marlboro from "./material/marlboro"
 import Bankaltimtara from "./material/bankaltimtara"
+import Honda from "./material/honda"
 
 export default function Animasi() {
     const [dialog, setDialog] = useState(false);
@@ -23,6 +24,7 @@ export default function Animasi() {
             <button onClick={(e) => openDialog(e.target.value)} className="bg-tertiary hover:opacity-70 p-3 rounded" value='Blackadders'>Blackadders</button>
             <button onClick={(e) => openDialog(e.target.value)} className="bg-tertiary hover:opacity-70 p-3 rounded" value='Marlboro'>Marlboro</button>
             <button onClick={(e) => openDialog(e.target.value)} className="bg-tertiary hover:opacity-70 p-3 rounded" value='Bankaltimtara'>Bankaltimtara</button>
+            <button onClick={(e) => openDialog(e.target.value)} className="bg-tertiary hover:opacity-70 p-3 rounded" value='Honda'>Honda</button>
             <Modal show={dialog} onClose={closeDialog}>
                 <div className='text-white text-xl m-3 p-2 bg-secondary rounded flex'>
                     <h1 className='grow'>{NamaAnimasi}</h1>
@@ -34,6 +36,7 @@ export default function Animasi() {
                     {NamaAnimasi === 'Blackadders' && (<Blackadders />)}
                     {NamaAnimasi === 'Marlboro' && (<Marlboro />)}
                     {NamaAnimasi === 'Bankaltimtara' && (<Bankaltimtara />)}
+                    {NamaAnimasi === 'Honda' && (<Honda />)}
                 </div>
             </Modal >
         </div>
