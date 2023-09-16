@@ -6,10 +6,8 @@ import Link from "next/link";
 
 export default function Cari() {
     const [dialog, setDialog] = useState(false);
-    // const [cari, setCari] = useState('');
     const [data, setData] = useState({});
     const [hasil, setHasil] = useState([]);
-    // console.log(data)
 
     const openDialog = () => {
         setDialog(true);
@@ -19,11 +17,6 @@ export default function Cari() {
         setDialog(false);
         setHasil([]);
     };
-
-    // const cariData = (cari) => {
-    //     setHasil(data.find(p => p.isi === cari))
-    //     console.log(hasil)
-    // }
 
     const cariData = (searchQuery, array, objectKey = 'judul') => {
         // Source: https://stackoverflow.com/a/65136399/22542174
@@ -35,11 +28,11 @@ export default function Cari() {
 
             return matchingWords.length
         }))
-        console.log(hasil);
     }
 
     const getData = () => {
-        fetch('http://localhost:3000/json/posts.json'
+        // fetch('http://localhost:3000/json/posts.json'
+        fetch('https://rutherford16.github.io/json/posts.json'
             , {
                 headers: {
                     'Content-Type': 'application/json',
@@ -82,7 +75,7 @@ export default function Cari() {
                         <hr className="border-secondary" />
                         <div className="mt-4 flex flex-col">
                             {Array.isArray(hasil) && hasil.map((h, i) =>
-                                <Link href={'/posts/post/'+h.id} className="p-1 my-1 border border-secondary underline hover:border-primary">{h.judul}</Link>
+                                <Link key={i} href={'/posts/post/'+h.id} className="p-1 my-1 border border-secondary underline hover:border-primary">{h.judul}</Link>
                             )}
                         </div>
                     </div>
