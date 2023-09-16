@@ -14,7 +14,8 @@ export default function TextEditor() {
 
     const simpanText = (e) => {
         setText(marked.parse(e))
-        setJson(e.replace(/\n/g, '\\n').replace(/\s/g, '\\s'))
+        setJson(e.replace(/\n/g, '\\n'))
+        // setJson(e.replace(/\n\n/g, '\\n\\n').replace(/\n/g, '\\s').replace(/\\s/g, ' '))
         setOriginal(marked.parse(e))
         // setOriginal(e.replace(/\\s/g, ' ').replace(/\\n/g, '\n'))
     }
