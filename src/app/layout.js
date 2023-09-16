@@ -16,7 +16,8 @@ export default function RootLayout({ children }) {
     lagu: [
       'Linkin Park - The Little Things Give You Away',
       'Avenged Sevenfold - A Little Piece of Heaven',
-      'Linkin Park - Drawbar'
+      'Linkin Park - Drawbar',
+      'Avenged Sevenfold - So Far Away'
     ],
     random: null
   });
@@ -30,6 +31,7 @@ export default function RootLayout({ children }) {
     if (nextIsPlaying) {
       audioRef.current.play();
       console.log('Memainkan: ' + (listLagu.random + 1) + ' - ' + listLagu.lagu[listLagu.random])
+      listLagu.random == 3 && console.log('Lagu ini kupersembahkan untuk Lulu Nashoha')
     } else {
       audioRef.current.pause();
     }
