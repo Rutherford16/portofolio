@@ -8,7 +8,11 @@ import Pagination from "./components/pagination";
 
 export default function Beranda() {
   // const posts = getSortedPostsData() || {};
-  const posts = data || {};
+  const posts = data.slice(0, 5) || {};
+  let link = [];
+  for(let i = 1; i <= Math.ceil(data.length/5); i++){
+    link.push(i);
+  }
 
   return (
     <>
@@ -24,7 +28,7 @@ export default function Beranda() {
           {post.slug}
         </Card>
       )}
-      <Pagination data={[1,2,3,4,5]}></Pagination>
+      <Pagination data={link} active={1}></Pagination>
     </>
   )
 }

@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation';
 
 
 export default function NavLink({ children, href }) {
-    const router = '/' +  usePathname().split('/')[1];
+    const router = '/' + (Number.isInteger(parseInt(usePathname().split('/')[1])) ? '' : usePathname().split('/')[1]);
     const newhref = '/' +  href.split('/')[1];
 
     return (
