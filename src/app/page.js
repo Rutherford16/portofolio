@@ -12,7 +12,7 @@ export default function Beranda() {
 
   return (
     <>
-      <div className="sticky top-0 flex flex-row justify-between h-fit w-full backdrop-blur-md p  -2">
+      <div className="sticky top-0 flex flex-row justify-between h-fit w-full backdrop-blur-md p-2">
         <div className='w-3/6 flex flex-row'>
           <input type="text" name="cari" id="cari" className='w-5/6 p-2 text-black focus:outline-none rounded-s-md border' placeholder='Cari' />
           <button type="submit" className='p-2 rounded-e-md border hover:bg-primary hover:text-black'>Cari</button>
