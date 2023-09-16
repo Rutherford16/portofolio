@@ -8,6 +8,11 @@ import Blackadders from './animasi/material/blackadders';
 import posts from '@/app/json/posts.json';
 import Badge from './components/badge';
 
+export const metadata = {
+  title: 'Rutherford16',
+  description: 'Website pribadi milik Ronny Hidayat',
+}
+
 export default function RootLayout({ children }) {
   const [loading, setLoading] = useState(true);
   const [isPlaying, setIsPlaying] = useState(false);
