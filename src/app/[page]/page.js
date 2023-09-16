@@ -6,7 +6,7 @@ import Pagination from "../components/pagination";
 export async function generateStaticParams() {
     let page = [];
     for (let i = 1; i <= Math.ceil(data.length / 5); i++) {
-        page.push({page: i.toString()});
+        page.push({ page: i.toString() });
     }
     return page;
 }
@@ -29,7 +29,7 @@ export default function Page({ params: { page } }) {
                 <Link href='/texteditor' className="p-2 border rounded hover:opacity-90">Text Editor</Link>
             </div>
             {Array.isArray(posts) && posts.map((post, key) =>
-                <Card key={key} judul={post.judul} dibuatKapan={post.tanggal} href={'/posts/post/' + (offset+key)}>
+                <Card key={key} judul={post.judul} dibuatKapan={post.tanggal} href={'/posts/post/' + (offset + key)}>
                     {post.slug}
                 </Card>
             )}
