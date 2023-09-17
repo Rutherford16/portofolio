@@ -143,9 +143,9 @@ export default function RootLayout({ children }) {
               <div className={'h-1 bg-primary fixed bottom-0 z-10 transition-all'} style={{ width: durasi }} />
               <nav id='navbar' className='fixed bottom-0 w-full flex flex-row justify-center bg-background border-t pb-1'>
                 <NavLink href='/'>Beranda</NavLink>
-                <NavLink href={'/posts/post/' + Math.floor(Math.random() * posts.length)}>Post</NavLink>
+                {/* <NavLink href={'/posts/post/' + Math.floor(Math.random() * posts.length)}>Post</NavLink> */}
                 <NavLink href='/animasi'>Animasi</NavLink>
-                {/* <NavLink href='/animasi3'>Animasi3</NavLink> */}
+                <NavLink href='/three'>Three.js</NavLink>
                 <button onClick={mainkan} className='fixed right-0 bottom-1 mr-2 hover:opacity-80'>
                   {isPlaying ? (
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" viewBox="0 0 20 20" fill="currentColor">

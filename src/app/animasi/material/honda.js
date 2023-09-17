@@ -57,7 +57,7 @@ export default function Honda() {
 
     return (
 
-        <div id="box" className='flex justify-center w-fit bg-transparent'>
+        <div id="box" className='flex justify-center w-full bg-transparent'>
             <svg viewBox="0 0 86 64" className='h-96'>
                 <g id="logo">
                     <path id="rangka" fill="red" d="M3,30 L80,28 C80,28 84,30 80,32 L68,32 L62,32 L77,31 C77,31 80,30 77,30 L10,35 C10,35 2,36 3,30 Z" />
