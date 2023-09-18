@@ -7,7 +7,9 @@ import GUI from 'lil-gui';
 export default function Three() {
     const [width, setWidth] = useState(0)
     const [height, setHeight] = useState(0)
+    const [fullscreen, setFullscreen] = useState(false)
 
+    const fulscreenRef = useRef(null);
     const canvasRef = useRef(null);
 
     function threeInitial() {
@@ -138,6 +140,40 @@ export default function Three() {
         requestAnimationFrame(render);
     }
 
+    function openFullscreen() {
+        setFullscreen(true)
+        let elem = fulscreenRef.current;
+        if (elem.requestFullscreen) {
+            elem.requestFullscreen();
+        } else if (elem.mozRequestFullScreen) { /* Firefox */
+            elem.mozRequestFullScreen();
+        } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+            elem.webkitRequestFullscreen();
+        } else if (elem.msRequestFullscreen) { /* IE/Edge */
+            elem.msRequestFullscreen();
+        }
+        if (width < height){
+            let tempWidth = width;
+            elem.style.rotate = '90deg';
+            elem.style.width = height;
+            elem.style.height = tempWidth;
+            // setWidth(height);
+            // setHeight(tempWidth);
+        }
+    }
+
+    function closeFullscreen() {
+        setFullscreen(false)
+        if (document.exitFullscreen) {
+            document.exitFullscreen();
+        } else if (document.mozExitFullscreen) { /* Firefox */
+            document.mozExitFullscreen();
+        } else if (document.webkitExitFullscreen) { /* Chrome, Safari & Opera */
+            document.webkitExitFullscreen();
+        } else if (document.msExitFullscreen) { /* IE/Edge */
+            document.msExitFullscreen();
+        }
+    }
 
     useEffect(() => {
         setWidth(canvasRef.current.offsetWidth)
@@ -146,6 +182,20 @@ export default function Three() {
     }, [width, height])
 
     return (
-        <canvas ref={canvasRef} className='w-full h-full block' />
+        <>
+            <div ref={fulscreenRef} className='w-full h-full'>
+                <canvas ref={canvasRef} className='w-full h-full block' />
+                {fullscreen && <button className='fixed bottom-0 right-0 text-primary w-5 h-5 m-3 hover:opacity-70' onClick={closeFullscreen}>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="w-full h-full" viewBox="0 0 16 16">
+                        <path d="M5.5 0a.5.5 0 0 1 .5.5v4A1.5 1.5 0 0 1 4.5 6h-4a.5.5 0 0 1 0-1h4a.5.5 0 0 0 .5-.5v-4a.5.5 0 0 1 .5-.5zm5 0a.5.5 0 0 1 .5.5v4a.5.5 0 0 0 .5.5h4a.5.5 0 0 1 0 1h-4A1.5 1.5 0 0 1 10 4.5v-4a.5.5 0 0 1 .5-.5zM0 10.5a.5.5 0 0 1 .5-.5h4A1.5 1.5 0 0 1 6 11.5v4a.5.5 0 0 1-1 0v-4a.5.5 0 0 0-.5-.5h-4a.5.5 0 0 1-.5-.5zm10 1a1.5 1.5 0 0 1 1.5-1.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 0-.5.5v4a.5.5 0 0 1-1 0v-4z" />
+                    </svg>
+                </button>}
+            </div>
+            {!fullscreen && <button className='fixed bottom-0 right-0 text-primary w-5 h-5 m-3 hover:opacity-70' onClick={openFullscreen}>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="w-full h-full" viewBox="0 0 16 16">
+                    <path d="M1.5 1a.5.5 0 0 0-.5.5v4a.5.5 0 0 1-1 0v-4A1.5 1.5 0 0 1 1.5 0h4a.5.5 0 0 1 0 1h-4zM10 .5a.5.5 0 0 1 .5-.5h4A1.5 1.5 0 0 1 16 1.5v4a.5.5 0 0 1-1 0v-4a.5.5 0 0 0-.5-.5h-4a.5.5 0 0 1-.5-.5zM.5 10a.5.5 0 0 1 .5.5v4a.5.5 0 0 0 .5.5h4a.5.5 0 0 1 0 1h-4A1.5 1.5 0 0 1 0 14.5v-4a.5.5 0 0 1 .5-.5zm15 0a.5.5 0 0 1 .5.5v4a1.5 1.5 0 0 1-1.5 1.5h-4a.5.5 0 0 1 0-1h4a.5.5 0 0 0 .5-.5v-4a.5.5 0 0 1 .5-.5z" />
+                </svg>
+            </button>}
+        </>
     )
 }

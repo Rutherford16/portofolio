@@ -5,7 +5,6 @@ import { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 import NavLink from './components/navlink';
 import Blackadders from './animasi/material/blackadders';
-import posts from '@/app/json/posts.json';
 import Badge from './components/badge';
 
 // export const metadata = {
@@ -145,7 +144,7 @@ export default function RootLayout({ children }) {
                 <NavLink href='/'>Beranda</NavLink>
                 {/* <NavLink href={'/posts/post/' + Math.floor(Math.random() * posts.length)}>Post</NavLink> */}
                 <NavLink href='/animasi'>Animasi</NavLink>
-                <NavLink href='/three'>Three.js</NavLink>
+                {/* <NavLink href='/three'>Three.js</NavLink> */}
                 <button onClick={mainkan} className='fixed right-0 bottom-1 mr-2 hover:opacity-80'>
                   {isPlaying ? (
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" viewBox="0 0 20 20" fill="currentColor">
