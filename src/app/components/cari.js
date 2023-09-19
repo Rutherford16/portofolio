@@ -31,8 +31,8 @@ export default function Cari() {
     }
 
     const getData = () => {
-        // fetch('http://localhost:3000/json/posts.json'
-        fetch('https://rutherford16.github.io/json/posts.json'
+        fetch('/json/posts.json'
+        // fetch('https://rutherford16.github.io/json/posts.json'
             , {
                 headers: {
                     'Content-Type': 'application/json',
