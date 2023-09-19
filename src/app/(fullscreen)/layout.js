@@ -1,11 +1,9 @@
 import '../globals.css';
 
-export default function RootLayout({children}){
-    return(
-        <html>
-            <body className='w-screen h-screen'>
-                {children}
-            </body>
-        </html>
+export default function RootLayout({ children }) {
+    return (
+        <section className='w-full h-screen'>
+            {children}
+        </section>
     )
 }

@@ -131,9 +131,6 @@ export default function RootLayout({ children }) {
                   <audio ref={audioRef} onPlay={() => setIsPlaying(true)} onPause={() => setIsPlaying(false)} className='m-auto mt-4' src={'/lagu/' + listLagu.lagu[listLagu.random] + '.mp3'}>
                     Sayang sekali browsermu tidak mendukung untuk memutar lagu.
                   </audio>
-                  {/* <div className='flex flex-row justify-center'>
-                    <button className='bg-secondary hover:opacity-90 rounded-t-lg border p-3'>atas</button>
-                  </div> */}
                 </div>
               </section>
               <section id='body' className='lg:border-l w-full min-h-screen p-4 mb-10'>
@@ -144,7 +141,7 @@ export default function RootLayout({ children }) {
                 <NavLink href='/'>Beranda</NavLink>
                 {/* <NavLink href={'/posts/post/' + Math.floor(Math.random() * posts.length)}>Post</NavLink> */}
                 <NavLink href='/animasi'>Animasi</NavLink>
-                {/* <NavLink href='/three'>Three.js</NavLink> */}
+                <NavLink href='/three'>Three.js</NavLink>
                 <button onClick={mainkan} className='fixed right-0 bottom-1 mr-2 hover:opacity-80'>
                   {isPlaying ? (
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" viewBox="0 0 20 20" fill="currentColor">
