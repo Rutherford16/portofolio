@@ -1,4 +1,4 @@
-import data from "@/app/json/posts.json"
+import data from "@/app/(standar)/json/posts.json"
 import Card from "../components/card"
 import Link from "next/link";
 import Pagination from "../components/pagination";

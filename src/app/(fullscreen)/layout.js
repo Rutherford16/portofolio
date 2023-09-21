@@ -2,8 +2,10 @@ import '../globals.css';
 
 export default function RootLayout({ children }) {
     return (
-        <section className='w-full h-screen'>
-            {children}
-        </section>
+        <html>
+            <body className='w-full h-screen'>
+                {children}
+            </body>
+        </html>
     )
 }

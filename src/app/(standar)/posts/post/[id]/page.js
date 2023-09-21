@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { marked } from "marked";
-import posts from "@/app/json/posts.json";
+import posts from "@/app/(standar)/json/posts.json";
 import NavBarPost from "@/app/components/navbarpost";
 
 export async function generateStaticParams() {

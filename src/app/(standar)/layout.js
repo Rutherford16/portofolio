@@ -1,16 +1,20 @@
 'use client'
 
-import './globals.css';
+import '../globals.css';
 import { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 import NavLink from './components/navlink';
 import Blackadders from './animasi/material/blackadders';
 import Badge from './components/badge';
 
-// export const metadata = {
-//   title: 'Rutherford16',
-//   description: 'Website pribadi milik Ronny Hidayat',
-// }
+export const metadata = {
+  title: 'Rutherford16',
+  description: 'Website pribadi milik Ronny Hidayat',
+  // meta: {
+  //   name: 'google-site-verification',
+  //   content: 'jzlNvMROC1_8KOdnf2z-b7V7r1CGKz9g8mUmHHviI2E',
+  // },
+}
 
 export default function RootLayout({ children }) {
   const [loading, setLoading] = useState(true);
@@ -86,10 +90,6 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
-      <head>
-        <meta name="google-site-verification" content="jzlNvMROC1_8KOdnf2z-b7V7r1CGKz9g8mUmHHviI2E" />
-        <title>Rutherford16</title>
-      </head>
       <body>
         {loading ? (
           <main className="w-screen h-screen bg-background text-primary font-firaMono border-primary">

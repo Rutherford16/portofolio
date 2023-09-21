@@ -1,15 +1,15 @@
-'use client'
-
-import data from "@/app/json/posts.json"
+import { getPosts } from "@/app/(standar)/lib/posts"
 import Card from "./components/card"
 import Link from "next/link";
 import Pagination from "./components/pagination";
 import Cari from "./components/cari";
-// import { getSortedPostsData } from "./lib/posts";
 
-export default function Beranda() {
-  // const posts = getSortedPostsData() || {};
+export default async function Beranda() {
+  const data = await getPosts();
+  console.log(data)
   const posts = data.slice(0, 5) || {};
+  // console.log(getPosts())
+  // const posts = {};
   let link = [];
   for (let i = 1; i <= Math.ceil(data.length / 5); i++) {
     link.push(i);
