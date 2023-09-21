@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { marked } from "marked";
 import posts from "@/app/(standar)/json/posts.json";
-import NavBarPost from "@/app/components/navbarpost";
+import NavBarPost from "@/app/(standar)/components/navbarpost";
 
 export async function generateStaticParams() {
     return posts.map((p) => ({
