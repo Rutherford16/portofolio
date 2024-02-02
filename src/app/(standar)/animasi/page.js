@@ -6,6 +6,7 @@ import Blackadders from "./material/blackadders"
 import Marlboro from "./material/marlboro"
 import Bankaltimtara from "./material/bankaltimtara"
 import Honda from "./material/honda"
+import Tatagraha from "./material/tatagraha"
 import Link from "next/link"
 import anime from "animejs"
 
@@ -64,6 +65,7 @@ export default function Animasi() {
                 <button onClick={(e) => openDialog(e.target.value)} className="bg-tertiary hover:opacity-70 p-3 rounded" value='Marlboro'>Marlboro</button>
                 <button onClick={(e) => openDialog(e.target.value)} className="bg-tertiary hover:opacity-70 p-3 rounded" value='Bankaltimtara'>Bankaltimtara</button>
                 <button onClick={(e) => openDialog(e.target.value)} className="bg-tertiary hover:opacity-70 p-3 rounded" value='Honda'>Honda</button>
+                <button onClick={(e) => openDialog(e.target.value)} className="bg-tertiary hover:opacity-70 p-3 rounded" value='Tatagraha'>Tatagraha</button>
             </div>
             <Modal show={dialog} onClose={closeDialog}>
                 <div className='text-white text-xl m-3 p-2 bg-secondary rounded flex'>
@@ -77,6 +79,7 @@ export default function Animasi() {
                     {NamaAnimasi === 'Marlboro' && (<Marlboro />)}
                     {NamaAnimasi === 'Bankaltimtara' && (<Bankaltimtara />)}
                     {NamaAnimasi === 'Honda' && (<Honda />)}
+                    {NamaAnimasi === 'Tatagraha' && (<Tatagraha />)}
                 </div>
             </Modal >
         </>

@@ -23,6 +23,11 @@
     src: url('/fonts/podiumsharp-3.7.otf');
   }
 
+  @font-face {
+    font-family: mocha;
+    src: url('/fonts/mocha.ttf');
+  }
+
   .reset-tailwind * {
     all: revert;
   }
