@@ -85,10 +85,7 @@ export default function Tatagraha() {
                 .add({
                     targets: '#arsitek',
                     opacity: [0, 1],
-                }, '-=800')
-                .add({
-                    delay: 20000,
-                });
+                }, '-=800');
     }
 
     useEffect(() => {
@@ -96,7 +93,7 @@ export default function Tatagraha() {
     }, []);
 
     return (
-        <span className='flex w-full h-40 text-blue-900'>
+        <span className='flex w-full h-auto p-8 bg-white text-blue-900'>
             <svg viewBox="0 0 260 84" className="w-full h-auto">
                 <rect width='15' height='25' x='0' y='0' fill="currentColor" />
                 <rect width='15' height='25' x='0' y='0' fill="currentColor" id="kotak2" />
