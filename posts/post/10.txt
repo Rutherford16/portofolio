@@ -1,8 +1,8 @@
-0:["OyazFzpCBIo47tx79MhNQ",[[["",{"children":["(standar)",{"children":["posts",{"children":["post",{"children":[["id","10","d"],{"children":["__PAGE__?{\"id\":\"10\"}",{}]}]}]}]},"$undefined","$undefined",true]}],"$L1",[[],"$L2"]]]]
+0:["BuJrdunQbuN0E_cmS0JpR",[[["",{"children":["(standar)",{"children":["posts",{"children":["post",{"children":[["id","10","d"],{"children":["__PAGE__?{\"id\":\"10\"}",{}]}]}]}]},"$undefined","$undefined",true]}],"$L1",[[],"$L2"]]]]
 3:HL["/_next/static/css/32d10e6ebd17c447.css","style",{"crossOrigin":""}]
 4:I[6954,[],""]
 5:I[7264,[],""]
-6:I[6268,["326","static/chunks/326-bf7461e8952b693d.js","674","static/chunks/674-60f8ad972d0391c4.js","99","static/chunks/99-6b3fedfb26cc15d6.js","103","static/chunks/app/(standar)/layout-9fc4812ff841c0dc.js"],""]
+6:I[6268,["326","static/chunks/326-bf7461e8952b693d.js","674","static/chunks/674-60f8ad972d0391c4.js","99","static/chunks/99-6b3fedfb26cc15d6.js","103","static/chunks/app/(standar)/layout-3b94f1e2f07a543e.js"],""]
 9:I[3422,["326","static/chunks/326-bf7461e8952b693d.js","663","static/chunks/app/(standar)/posts/post/%5Bid%5D/page-fa28aabcc67cda6e.js"],""]
 a:T737,<h1>Marked - Markdown Parser</h1>
 <p><a href="https://github.com/markedjs/marked/">Marked</a> lets you convert <a href="http://daringfireball.net/projects/markdown/">Markdown</a> into HTML.  Markdown is a simple text format whose goal is to be very easy to read and write, even when not converted to HTML.  This demo page will let you type anything you like and see how it gets converted.  Live.  No more waiting around.</p>
