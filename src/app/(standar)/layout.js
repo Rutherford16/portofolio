@@ -145,7 +145,7 @@ export default function RootLayout({ children }) {
                 <NavLink href='/'>Beranda</NavLink>
                 {/* <NavLink href={'/posts/post/' + Math.floor(Math.random() * posts.length)}>Post</NavLink> */}
                 <NavLink href='/animasi'>Animasi</NavLink>
-                <NavLink href='/alat'>Alat</NavLink>
+                {/* <NavLink href='/alat'>Alat</NavLink> */}
                 <NavLink href='/three'>Three.js</NavLink>
                 <button onClick={mainkan} className='fixed right-0 bottom-1 mr-2 hover:opacity-80'>
                   {isPlaying ? (
