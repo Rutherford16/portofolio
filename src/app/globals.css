@@ -28,6 +28,11 @@
     src: url('/fonts/mocha.ttf');
   }
 
+  @font-face {
+    font-family: nougat;
+    src: url('/fonts/Nougat-ExtraBlack.ttf');
+  }
+  
   .reset-tailwind * {
     all: revert;
   }

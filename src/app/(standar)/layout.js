@@ -109,7 +109,7 @@ export default function RootLayout({ children }) {
                   <Image src="/images/foto-profil.jpg" alt='Foto Profil' width={24} height={24} className=' rounded-full w-2/5 h-auto' />
                   <div className='flex flex-col pt-11 px-5'>
                     <h1 className='text-2xl'>Rutherford16</h1>
-                    <h3 className='text-xs'>Junior Web Developer</h3>
+                    <h3 className='text-xs'>Hobbyist Programmer</h3>
                     {isPlaying ? (
                       <marquee className='text-xs' scrollamount='4'>{listLagu.random + 1 + ' - ' + listLagu.lagu[listLagu.random]}</marquee>
                     ) : (
@@ -118,9 +118,9 @@ export default function RootLayout({ children }) {
                   </div>
                 </div>
                 <div className='p-4 sm:w-4/6 sm:p-9 lg:p-4 lg:w-full w-full sm:border-l lg:border-none border-secondary'>
-                  <p className='indent-8 text-justify'>
+                  {/* <p className='indent-8 text-justify'>
                     Selamat datang di blog saya yang sederhana ini. Perkenalkan nama saya Ronny Hidayat, saya hanyalah seseorang yang memiliki hobi dalam programming. Silahkan menikmati tulisan saya yang random ini sambil mendengarkan lagu kesukaan saya.
-                  </p>
+                  </p> */}
                   {/* <div className='pt-4'>
                     <h3 className='text-center font-bold'>Keahlian</h3>
                     <div className='grid grid-cols-3 gap-4 p-2'>
@@ -145,6 +145,7 @@ export default function RootLayout({ children }) {
                 <NavLink href='/'>Beranda</NavLink>
                 {/* <NavLink href={'/posts/post/' + Math.floor(Math.random() * posts.length)}>Post</NavLink> */}
                 <NavLink href='/animasi'>Animasi</NavLink>
+                <NavLink href='/alat'>Alat</NavLink>
                 <NavLink href='/three'>Three.js</NavLink>
                 <button onClick={mainkan} className='fixed right-0 bottom-1 mr-2 hover:opacity-80'>
                   {isPlaying ? (

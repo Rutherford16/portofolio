@@ -19,6 +19,7 @@ module.exports = {
         hemiHead: ['hemiHead'],
         podiumSharp: ['podiumSharp'],
         mocha: ['mocha'],
+        nougat: ['nougat'],
       },
       typography: (theme) => ({
         DEFAULT: {
